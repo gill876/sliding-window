@@ -23,19 +23,19 @@ public class Main {
         int reference_string_length = reference_string.length();
         int window_start = 0;
         int window_end = reference_string.length();
-        int window_length = window_end - window_start;
+        int window_size = window_end - window_start;
 
         ArrayList<String> output = new ArrayList<>();
 
-        while (window_length > 1) {
-            while (reference_string_length >= window_start + window_length) {
-                String window_value = reference_string.substring(window_start, window_start + window_length);
+        while (window_size > 1) {
+            while (reference_string_length >= window_start + window_size) {
+                String window_value = reference_string.substring(window_start, window_start + window_size);
 
                 output.add(window_value); // You can do whatever here. I chose to save the window here
 
                 window_start++; // Move the window across relative to reference_string
             }
-            window_length--;
+            window_size--;
             window_start = 0; // Reset relative to reference_string by moving the window to the start
         }
 
