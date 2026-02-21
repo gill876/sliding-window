@@ -40,7 +40,7 @@ jobs:
       run: |
         mvn clean test \
           -B \
-          -Dtest="com.example.**.*Test" \
+          -Dtest="com.example.**.*Tests" \
           -DfailIfNoTests=true \
           --fail-at-end
 
