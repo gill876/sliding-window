@@ -20,3 +20,30 @@ The algorithm will iterate by sliding the window across reference_string by each
 
 ![Diagram illustrating the decrementing sliding window algorithm](decrementingSlidingWindow.drawio.png)
 
+### Main code
+
+[`src/main/java/com/example/Main.java`](src/main/java/com/example/Main.java)
+```java
+    public static String[] decrementingSlidingWindow(String reference_string) {
+        int reference_string_length = reference_string.length();
+        int window_start = 0;
+        int window_end = reference_string.length();
+        int window_size = window_end - window_start;
+
+        ArrayList<String> output = new ArrayList<>();
+
+        while (window_size > 1) {
+            while (reference_string_length >= window_start + window_size) {
+                String window_value = reference_string.substring(window_start, window_start + window_size);
+
+                output.add(window_value); // You can do whatever here. I chose to save the window here
+
+                window_start++; // Move the window across relative to reference_string
+            }
+            window_size--;
+            window_start = 0; // Reset relative to reference_string by moving the window to the start
+        }
+
+        return output.toArray(new String[0]);
+    }
+```
