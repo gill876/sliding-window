@@ -1,5 +1,9 @@
 ## Decrementing Sliding Window in Java
 
+[![Java CI with Maven](https://github.com/gill876/sliding-window/actions/workflows/maven.yml/badge.svg)](https://github.com/gill876/sliding-window/actions/workflows/maven.yml)
+![GitHub Repo stars](https://img.shields.io/github/stars/gill876/sliding-window)
+![GitHub forks](https://img.shields.io/github/forks/gill876/sliding-window)
+
 ### Why I'm creating this
 
 I was doing this coding test but fumbled and couldn't figure out how to implement a decrementing sliding window in Java.
