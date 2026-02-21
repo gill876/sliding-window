@@ -1,15 +1,61 @@
 package com.example;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class MainTests {
 
   @Test
-  @DisplayName("1 + 1 = 2")
-  void slideThroughShortWord() {
-    assertEquals(2, Main.decrementingSlidingWindow("hello"), "1 + 1 should equal 2");
+  void testDecrementingSlidingWindow() {
+    final String[] expected_string = {
+        "helloworld",
+        "helloworl",
+        "elloworld",
+        "hellowor",
+        "elloworl",
+        "lloworld",
+        "hellowo",
+        "ellowor",
+        "lloworl",
+        "loworld",
+        "hellow",
+        "ellowo",
+        "llowor",
+        "loworl",
+        "oworld",
+        "hello",
+        "ellow",
+        "llowo",
+        "lowor",
+        "oworl",
+        "world",
+        "hell",
+        "ello",
+        "llow",
+        "lowo",
+        "owor",
+        "worl",
+        "orld",
+        "hel",
+        "ell",
+        "llo",
+        "low",
+        "owo",
+        "wor",
+        "orl",
+        "rld",
+        "he",
+        "el",
+        "ll",
+        "lo",
+        "ow",
+        "wo",
+        "or",
+        "rl",
+        "ld"
+    };
+
+    assertThat(Main.decrementingSlidingWindow("helloworld")).isEqualTo(expected_string);
   }
 }
